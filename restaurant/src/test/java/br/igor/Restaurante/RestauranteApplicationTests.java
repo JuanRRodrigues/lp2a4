@@ -1,13 +1,13 @@
-package com.example.restaurant;
+package br.igor.Restaurante;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RestaurantApplicationTests {
+class RestauranteApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
