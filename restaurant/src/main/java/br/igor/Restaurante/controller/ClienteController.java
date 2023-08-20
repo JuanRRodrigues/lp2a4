@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("cardapio")
+@RequestMapping("cliente")
 public class ClienteController {
 
     @Autowired
