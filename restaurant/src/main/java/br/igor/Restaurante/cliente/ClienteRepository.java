@@ -1,7 +1,6 @@
-package br.igor.Restaurante.repository;
+package br.igor.Restaurante.cliente;
 
-import br.igor.Restaurante.model.Cliente;
-import br.igor.Restaurante.model.Prato;
+import br.igor.Restaurante.cliente.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {

@@ -5,6 +5,7 @@ import br.igor.Restaurante.cliente.DadosAtualizacaoCliente;
 import br.igor.Restaurante.cliente.DadosCadastroCliente;
 import br.igor.Restaurante.cliente.DadosListagemCliente;
 import br.igor.Restaurante.cliente.ClienteRepository;
+import br.igor.Restaurante.funcionario.*;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,31 +16,31 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("clientes")
-public class ClienteController {
+@RequestMapping("funcionarios")
+public class FuncionarioController {
 
     @Autowired
-    ClienteRepository repository;
+    FuncionarioRepository repository;
 
 
     @PostMapping
-    public void cadastrar(@RequestBody @Valid DadosCadastroCliente dados){
-        repository.save(new Cliente(dados));
+    public void cadastrar(@RequestBody @Valid DadosCadastroFuncionario dados){
+        repository.save(new Funcionario(dados));
     }
 
     @GetMapping
-    public Page<DadosListagemCliente> listar(@PageableDefault(sort = {"nome"}) Pageable paginacao) {
+    public Page<DadosListagemFuncionario> listar(@PageableDefault(sort = {"nome"}) Pageable paginacao) {
 
-        return repository.findAll(paginacao).map(DadosListagemCliente::new);
+        return repository.findAll(paginacao).map(DadosListagemFuncionario::new);
     }
 
 
 
     @PutMapping("/{id}")
     @Transactional
-    public void atualizar(@RequestBody @Valid DadosAtualizacaoCliente dados){
-       var cliente = repository.getReferenceById(dados.id());
-       cliente.atualizarInformacoes(dados);
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoFuncionario dados){
+       var funcionario = repository.getReferenceById(dados.id());
+       funcionario.atualizarInformacoes(dados);
     }
 
     @DeleteMapping("/{id}")

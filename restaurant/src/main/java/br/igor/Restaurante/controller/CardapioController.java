@@ -1,15 +1,13 @@
 package br.igor.Restaurante.controller;
 
-import br.igor.Restaurante.dto.CardapioRequestDTO;
-import br.igor.Restaurante.dto.CardapioResponseDTO;
-import br.igor.Restaurante.model.Prato;
-import br.igor.Restaurante.repository.CardapioRepository;
-import org.springframework.beans.factory.annotation.Autowire;
+import br.igor.Restaurante.cardapio.CardapioRequestDTO;
+import br.igor.Restaurante.cardapio.CardapioResponseDTO;
+import br.igor.Restaurante.prato.Prato;
+import br.igor.Restaurante.cardapio.CardapioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -19,8 +17,6 @@ public class CardapioController {
     @Autowired
     CardapioRepository cardapioRepository;
     private List<Prato> pratos = new ArrayList<>();
-
-
 
 
     @GetMapping
