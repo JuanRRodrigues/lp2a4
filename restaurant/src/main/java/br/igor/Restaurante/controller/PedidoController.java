@@ -8,6 +8,7 @@ import br.igor.Restaurante.pedido.PedidoRepository;
 import br.igor.Restaurante.pedido.PedidoRequestDTO;
 import br.igor.Restaurante.pedido.PedidoResponseDTO;
 import br.igor.Restaurante.prato.Prato;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,4 +40,10 @@ public class PedidoController {
         }
         repository.save(new Pedido(data.title(), repositoryCliente.findById(data.cliente()).get(), p));
     }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        repository.deleteById(id);
+    }
+
 }
