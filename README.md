@@ -1,6 +1,6 @@
 # lp2a4
 
-----------------------------------------------------------------
+
 Atividade 6 - Banco:MySQL
 inserir Usuários com SQL
 
@@ -13,4 +13,3 @@ VALUES ('juan', 'senha', true);
 INSERT INTO users (username, password, organizador)
 VALUES ('carlos', 'senha', false);
 
----------------------------------------------------------
